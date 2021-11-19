@@ -7,7 +7,10 @@ Spécifications du fichier d'échange relatif aux comptages des mobilités : fic
 Le schéma de comptage des mobilités est structuré en trois notions distinctes : les sites, les channels, et les mesures.
 Chacune de ces notions est retranscrite dans son propre fichier :
 les sites vont dans un fichier “sites.csv” avec une ligne par site les channels dans un fichier “channels.csv” (idem)les mesures dans un fichier “measures.csv” (idem)
-Pour l'instant, chacune de ces notions a sa propre page sur schema.data.gouv.fr car des limitations techniques ne permettaient pas de les héberger sur la même page. Chaque entité a son propre fichier. Ces fichiers s’articulent entre eux grâce à des identifiants. 
+Pour l'instant, chacune de ces notions a sa propre page sur schema.data.gouv.fr car des limitations techniques ne permettaient pas de les héberger sur la même page. 
+- site : https://github.com/etalab/comptage-mobilites-site
+- channel :https://github.com/etalab/comptage-mobilites-channel
+Chaque entité a son propre fichier.  Ces fichiers s’articulent entre eux grâce à des identifiants. 
 
 Ce schéma est spécifique à la notion de measure. 
 Le fichier measure contient les données de comptage. Ce fichier est dit “dynamique” car les données seront amenées à être fréquemment mises à jour selon le pas de temps ou la fréquence de rafraîchissement que le producteur définira en amont. 
@@ -22,7 +25,7 @@ Trois ateliers ouverts (le 23/04/2021) le 17/06/2021, et le 28/09/2021) ont perm
 
 ## Cadre juridique
 
-L’ouverture des données sur le comptage des mobilités ne répond à aucune obligation réglementaire et n'est donc pas encadrée par le Règlement Européen (UE 2017 1926) ni par la Loi d'Orientation des Mobilités.
+L’ouverture des données sur le comptage des mobilités ne répond à aucune obligation réglementaire et n'est pas encadrée par le Règlement Européen (UE 2017 1926) ni par la Loi d'Orientation des Mobilités.
 
 Les collectivités harmonisent et publient donc ces données librement.  
 
@@ -30,11 +33,12 @@ Les collectivités harmonisent et publient donc ces données librement.
 
 Pour faciliter la réutilisation et réduire le coût d’intégration des données de comptage des mobilités dans des services tiers, un schéma a été défini afin d’assurer une harmonisation de ces données sur l’ensemble du territoire. Il permet de modéliser les comptages de différents types de mobilité : vélos, trottinettes, piétons, scooters, motos, camions, etc. 
 
-Ce schéma permet d'estimer la fréquentation des aménagements cyclables grâce à des données dynamiques de comptage vélo. 
-Il doit être associé au schéma "sites" et "measures" de comptage des mobilité. Il ne peut être réutilisé sans ces fichiers.
+Ce schéma permet d'estimer la fréquentation d'infrastructures grâce à des données dynamiques de comptage. 
+Il doit être associé au schéma "site" et "channel" de comptage des mobilité. Il ne peut être réutilisé sans ces fichiers.
 
 Ce schéma définit des informations obligatoires, qui sont nécessaires pour fournir une information voyageur minimale, et complémentaires à fournir par le producteur. Cette distinction a été mise en place pour ne pas pénaliser les petits producteurs de données, et définit un standard minimal de complétude des données. Il est toutefois demandé aux producteurs de données de compléter le schéma avec le plus grand niveau de détail possible, afin de transmettre une information plus riche à l’usager final.
 La base présente plusieurs cas d’usage : elle recense les sites de comptage d’une collectivité en permettant à des services de calcul d’itinéraire d’intégrer ces données et à chacun de suivre la fréquentation des mobilités d'un territoire donné.
+
 ## Format de fichier
 
 Les jeux de données seront publiées au format CSV UTF8 avec séparateur virgule ",". Certains champs sont obligatoires et d'autres optionnels. Les champs obligatoires doivent être complétés. Les champs optionnels peuvent être vides si la donnée n’est pas disponible. La colonne doit toutefois être présente.
@@ -45,7 +49,7 @@ Dans le but de maintenir à jour un répertoire des compteurs de vélos en Franc
 
 - publier directement sur data.gouv.fr ;
 - publier sur un portail local ou régional et s'assurer que les données publiées sont bien moissonnées et référencées sur data.gouv.fr.
-Nous préconisons aux producteurs de données de publier leurs fichiers avec la règle de nommage suivante : comptagemobilites_nom.csv avec nom étant le nom de la collectivité productrice des données, par exemple comptagevelo_Baix.csv
+Nous préconisons aux producteurs de publier leurs fichiers avec la règle de nommage suivante : comptagemobilites_nom.csv avec nom étant le nom de la collectivité productrice des données, par exemple comptagevelo_Baix.csv
 
 
 ## Conditions d’utilisation
