@@ -96,6 +96,5 @@
          "type": "number",
          "required": true
       }
-   ],
-   "primaryKey": "counter_id"
+   ]
 }
