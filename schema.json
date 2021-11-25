@@ -60,7 +60,7 @@
    "fields": [
       {
          "name": "channel_id",
-         "description": "Identifiant unique du channel dans le référentiel de la collectivité. Référence du channel auquel les données sont rattachées",
+         "description": "Identifiant unique du channel dans le référentiel de la collectivité. Fait référence au champ `channel_id` du fichier channel auquel les données sont rattachées",
          "example": "C-C-01-Baix",
          "type": "string",
          "constraints": {
