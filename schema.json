@@ -24,7 +24,7 @@
       },
       {
          "title": "Deuxième fichier valide (CSV)",
-         "name": "exemple-valide-eco-compteur.csv,
+         "name": "exemple-valide-eco-compteur.csv",
          "path": "https://github.com/etalab/comptage-mobilites-measure/blob/master/exemple-valide-eco-compteur.csv"
       }
    ],
