@@ -8,7 +8,7 @@
       "mobilité"
    ],
    "countryCode": "FR",
-   "homepage": "https://github.com/etalab/schema-comptage-velo-dynamiquehttps://github.com/etalab/comptage-mobilites-measure",
+   "homepage": "https://github.com/etalab/comptage-mobilites-measure",
    "licenses": [
       {
          "title": "Etalab Licence Ouverte 2.0",
@@ -20,11 +20,16 @@
       {
          "title": "Fichier valide (CSV)",
          "name": "exemple-valide-csv",
-         "path": ""
+         "path": "https://github.com/etalab/comptage-mobilites-measure/blob/master/exemple-valide.csv"
+      },
+      {
+         "title": "Deuxième fichier valide (CSV)",
+         "name": "exemple-valide-eco-compteur.csv",
+         "path": "https://github.com/etalab/comptage-mobilites-measure/blob/master/exemple-valide-eco-compteur.csv"
       }
    ],
    "created": "2021-11-15",
-   "lastModified": "2021-11-15",
+   "lastModified": "2021-11-25",
    "version": "0.1.0",
    "contributors": [
       {
@@ -55,7 +60,7 @@
    "fields": [
       {
          "name": "channel_id",
-         "description": "Identifiant unique du channel dans le référentiel de la collectivité. Référence du channel auquel les données sont rattachées",
+         "description": "Identifiant unique du channel dans le référentiel de la collectivité. Fait référence au champ `channel_id` du fichier channel auquel les données sont rattachées",
          "example": "C-C-01-Baix",
          "type": "string",
          "constraints": {
@@ -82,7 +87,7 @@
       },
       {
          "name": "end_datetime",
-         "description": "Date et heure du fin du comptage au format ISO 8601. La colonne doit être présente mais la valeur peut être à vide, auquel cas le pas de temps (time_step) spécifié dans le schéma compteurs sera obligatoire et prise en compte. Cette borne de fin est exclusive (période de mesure strictement inférieure à end_datetime). Ce champ est conditionnelemnt requis. Il devient obligatoire lorsque le champ `time_step` n'est complété",
+         "description": "Date et heure du fin du comptage au format ISO 8601. La colonne doit être présente mais la valeur peut être à vide, auquel cas le pas de temps (time_step) spécifié dans le schéma compteurs sera obligatoire et prise en compte. Cette borne de fin est exclusive (période de mesure strictement inférieure à end_datetime). Ce champ est conditionnellemnt requis. Il devient obligatoire lorsque le champ `time_step` n'est complété",
          "example": "2019-09-07T13:30:00Z",
          "type": "datetime",
          "constraints": {
@@ -91,10 +96,10 @@
       },
       {
          "name": "count",
-         "description": "Nombre de passages comptabilisés sur la période considérée. Lorsqu'il n'y a pas eu de passage, renseigner la valeur 0. Si il n'y a aucun comptage, laisser le champ vide. Il est possible de renseigner un nombre à virgule si le chiffre est le résultat d'un calcul (interpolation, moyenne pour compléter des données abîmées ou extrapolées sur des périodes de temps différentes, mais en souhaitant conserver une justesse statistique globale). Si le champ `mobility_type` est mutivalué pour le channel correspondant le fichier `channel`, il est rappelé que le `count` sera la somme des pratiques enregistrées. Pour suivre les pratiques différement, il faut créer un channel par pratique.",
+         "description": "Nombre de passages comptabilisés sur la période considérée. Lorsqu'il n'y a pas eu de passage, renseigner la valeur 0. Si il n'y a aucun comptage, laisser le champ vide. Il est possible de renseigner un nombre à virgule si le chiffre est le résultat d'un calcul (interpolation, moyenne pour compléter des données abîmées ou extrapolées sur des périodes de temps différentes, mais en souhaitant conserver une justesse statistique globale). Si le champ `mobility_type` est multivalué pour le channel correspondant le fichier `channel`, il est rappelé que le `count` sera la somme des pratiques enregistrées. Pour suivre les pratiques différemment, il faut créer un channel par pratique.",
          "example": "20",
          "type": "number",
-         "required": true
+         "required": false
       }
    ]
 }
