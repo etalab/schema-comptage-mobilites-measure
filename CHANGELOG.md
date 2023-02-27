@@ -2,7 +2,7 @@
 
 Ce fichier répertorie les changements entre différentes versions d'un schéma.
 
-## Version 0.2.2 - 2022-02-24
+## Version 0.2.2 - 2023-02-24
 - Aucun changement. Ajustement avec version comptage-mobilité-site
 
 ## Version 0.2.0 - 2022-10-28
